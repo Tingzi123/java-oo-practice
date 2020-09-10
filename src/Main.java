@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         List<Item> itemList=new LinkedList<>();
+        List<Item> itemBuyList=new LinkedList<>();
         List<User> userList=new LinkedList<>();
 
         while(true){
@@ -47,7 +48,7 @@ public class Main {
 
                         switch (tab){
                             case 1:
-                                userUtil.viewItems(itemList);
+                                userUtil.viewItems(itemList,itemBuyList);
                                 break;
                             case 2:
                                 System.out.println("请输入您要投票的热搜事件的名字：");
@@ -69,7 +70,7 @@ public class Main {
                                 System.out.println("请输入您要购买的热搜金额：");
                                 int money=sc.nextInt();
                                 System.out.println();
-                                userUtil.buyItem(buyContentName,number,money,itemList);
+                                userUtil.buyItem(buyContentName,number,money,itemList,itemBuyList);
                                 break;
                             case 4:
                                 System.out.println("请输入您要添加的热搜事件的名字：");
@@ -117,7 +118,7 @@ public class Main {
 
                         switch (adminTab){
                             case 1:
-                                adminUtil.viewItems(itemList);
+                                adminUtil.viewItems(itemList,itemBuyList);
                                 break;
                             case 2:
                                 System.out.println("请输入您要添加的热搜事件的名字：");
